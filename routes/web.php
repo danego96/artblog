@@ -14,10 +14,6 @@ use App\Http\Controllers\ArticleController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
- 
+Route::get('/', [ArticleController::class, 'index']);
 Route::get('/article/create', [ArticleController::class, 'create']);
 Route::get('/articles', [ArticleController::class, 'store']);
