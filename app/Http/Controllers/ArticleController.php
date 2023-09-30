@@ -38,6 +38,12 @@ class ArticleController extends Controller
         return redirect('/');
     }
 
+    public function show_all(){
+        $articles = Article::latest()->paginate(10);
+        return view('articles.show-all', ['article' => $articles]);
+
+    }
+
     /**
      * Display the specified resource.
      */
