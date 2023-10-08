@@ -12,7 +12,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::latest()->paginate(6);
+        $articles = Article::latest()->limit(6)->get();
         return view('articles.index', ['article' => $articles]);
     }
 
@@ -39,7 +39,7 @@ class ArticleController extends Controller
     }
 
     public function show_all(){
-        $articles = Article::latest()->paginate(10);
+        $articles = Article::latest()->filter(request(['tag']))->paginate(10);
         return view('articles.show-all', ['article' => $articles]);
 
     }
