@@ -9,7 +9,9 @@
                 <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">АртБлог</h2>
                 <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Блог статей</p>
             </div> 
+            <div class="grid gap-8 lg:grid-cols-2">
             <x-article-card :articles="$article"/>
+            </div>
         </div>
       </section>
 </x-layout>
