@@ -1,9 +1,13 @@
 
     @foreach ($articles as $article)
         <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <div class="flex justify-between items-center mb-5 text-gray-500">
-    <x-article-tags :tagsCsv="$article->tag"/>
-        <span class="text-sm">{{ $article->created_at }}</span>
+            <div class="flex items-center justify-between text-gray-500 rounded-xl py-1 mr-2 text-xs">
+                <div class="tags">
+                    <x-article-tags :tagsCsv="$article->tag"/>
+                </div>
+                <div class="date">
+                    <span class="font-medium">{{ $article->created_at }}</span>
+                </div>
             </div>
             <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a
                     href="#">{{ $article->name }}</a></h2>
