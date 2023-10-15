@@ -1,5 +1,5 @@
 <x-layout>
-    @section('pageTitle', 'Artblog')
+    @section('pageTitle', 'All articles')
     @include('partials.header')
     
     <section class="bg-white dark:bg-gray-900">
