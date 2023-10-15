@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,8 @@ use App\Http\Controllers\ArticleController;
 */
 
 Route::get('/', [ArticleController::class, 'index']);
+Route::get('/register', [UserController::class, 'register']);
+Route::post('/users', [UserController::class, 'store']);
 Route::get('/article/create', [ArticleController::class, 'create']);
 Route::get('/article/{article}', [ArticleController::class, 'show']);
 Route::get('/articles', [ArticleController::class, 'show_all']);

@@ -20,7 +20,7 @@ class LikeController extends Controller
         return redirect()->back();
     }
 
-    public function unlike(UnlikeRequest $like)
+    public function unlike(UnlikeRequest $request)
     {
         $request->user()->unlike($request->likeable());
 
