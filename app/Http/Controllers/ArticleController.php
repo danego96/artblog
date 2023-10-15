@@ -38,10 +38,10 @@ class ArticleController extends Controller
         return redirect('/');
     }
 
-    public function show_all(){
+    public function show_all()
+    {
         $articles = Article::latest()->filter(request(['tag']))->paginate(10);
         return view('articles.show-all', ['article' => $articles]);
-
     }
 
     /**
@@ -49,7 +49,8 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        return view('articles.show');
+
+        return view('articles.show', ['articles' => $article]);
     }
 
     /**
