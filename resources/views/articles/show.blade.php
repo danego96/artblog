@@ -1,6 +1,6 @@
 <x-layout>
     @include('partials.header')
-    @foreach ($articles as $article)
+
     <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
         <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
             <article
@@ -426,8 +426,7 @@
             </article>
         </div>
     </main>
-    @endforeach
-
+    
     <aside aria-label="Related articles" class="py-8 lg:py-24 bg-gray-50 dark:bg-gray-800">
         <div class="px-4 mx-auto max-w-screen-xl">
             <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Related articles</h2>
