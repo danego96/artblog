@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LikeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,8 @@ Route::get('/article/{article}', [ArticleController::class, 'show']);
 Route::get('/articles', [ArticleController::class, 'show_all']);
 Route::post('/articles', [ArticleController::class, 'store']);
 Route::middleware('auth')->group(function () {
-    Route::post('like', 'LikeController@like')->name('like');
-    Route::delete('like', 'LikeController@unlike')->name('unlike');
+    Route::post('like', [LikeController::class, 'like'])->name('like');
+    Route::delete('like', [LikeController::class, 'unlike'])->name('unlike');
 });
 
 
